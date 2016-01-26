@@ -261,7 +261,8 @@
     }
 
      function setHWRoboticsOnLoad() {
-        //console.log("calling set onload");
+        console.log("calling set onload");
+        console.log(localStorage.roboticsHWlocal);
         document.getElementById("inputHWRobotics").innerHTML = localStorage.roboticsHWlocal;
         //console.log("set inner html");
     }
@@ -271,9 +272,10 @@
         var key = window.event.keyCode;
         // If the user has pressed enter
         if (key==32 ||key==13) {
-            
+            console.log("robotics save test");
             var roboticsHW = document.getElementById("inputHWRobotics").value;
             localStorage.roboticsHWlocal = roboticsHW;
+            console.log(localStorage.roboticsHWlocal);
         }
     }
 
