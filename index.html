@@ -1,1 +1,278 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homework</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    
+    .row.content {
+        height: 550px
+    }
+    /* Set gray background color and 100% height */
+    
+    .sidenav {
+        background-color: #f1f1f1;
+        height: 100%;
+    }
+    /* On small screens, set height to 'auto' for the grid */
+    
+    @media screen and (max-width: 767px) {
+        .row.content {
+            height: auto;
+        }
+    }
+    </style>
+</head>
+
+<body <body onload="setHWOnload()">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Resources</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://drive.google.com/a/seattleacademy.org/file/d/0B3zRyRd17XYEWHAzYmROaUp3WnM/view?usp=sharing">Schedule</a></li>
+                    <li><a href="http://saasmath.seattleacademy.org/jessewalling/winter04.html">What Block Is It?</a></li>
+                    <li><a href="https://seattleacademy.mrooms3.net/">Moodle</a></li>
+                    <li><a href="https://mynotebook.labarchives.com/">Lab Archives</a></li>
+                    <li><a href="https://sso.rumba.pearsoncmg.com/sso/login?profile=snp&k12int=true&service=https://www.pearsonsuccessnet.com:443/snpapp/login/login.jsp">Advanced Algebra Textbook</a></li>
+                    <li><a href="#">Advanced Algebra Videos</a></li>
+                    <li><a href="http://ilovealgebra.com/home">ILoveAlgebra.com</a></li>
+                    <li><a href="https://quizlet.com/latest">Quizlet</a></li>
+                    <li><a href="attendance.saasrobotics.com">Robotics Attendance</a></li>
+                    <li><a href="calendar.saasrobotics.com">Robotics Calendar</a></li>
+                    <li><a href="http://seattleacademyspeech.org/">Speech and Debate</a></li>
+                    <li><a href="https://saas.seniormbp.com/SeniorApps/facelets/registration/loginCenter.xhtml">MyBackpack</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row content">
+            <br>
+            <div class="well">
+                <h1>Homework</h1>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="well">
+                        <h4>History</h4>
+                        <div class="form-group">
+                            <textarea id="inputHWHistory" onkeypress="saveHWHistory();" rows="2" cols="25"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="well">
+                        <h4>English</h4>
+                        <textarea id="inputHWEnglish" onkeypress="saveHWEnglish();" rows="2" cols="25" ></textarea>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="well">
+                        <h4>Spanish</h4>
+                        <textarea id="inputHWSpanish" onkeypress="saveHWSpanish();" rows="2" cols="25"></textarea>
+                    </div>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="well">
+                            <h4>Lab Science</h4>
+                            <textarea id="inputHWScience" onkeypress="saveHWScience();" rows="2" cols="25"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="well">
+                            <h4>Advanced Algebra</h4>
+                            <textarea id="inputHWAlgebra" onkeypress="saveHWAlgebra();" rows="2" cols="25"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="well">
+                            <h4>Software Development</h4>
+                            <textarea id="inputHWSoftware" onkeypress="saveHWSoftware();" rows="2" cols="25"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="well">
+                            <h4>Debate</h4>
+                            <textarea id="inputHWDebate" onkeypress="saveHWDebate();" rows="2" cols="25"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="well">
+                            <h4>Robotics</h4>
+                             <textarea id="inputHWRobotics" onkeypress="saveHWRobotics();" rows="2" cols="25"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    console.log("test");
+
+    // function setHeight(fieldId) 
+    // {
+    //     document.getElementById(fieldId).style.height = document.getElementById(fieldId).scrollHeight + 'px';
+    // }
+    //setHeight('textBox1');
+
+    //$(form).formValidation(options);
+    function setHWOnload() {
+        setHWEnglishOnLoad();
+        setHWHistoryOnLoad();
+        setHWSpanishOnLoad();
+        setHWScienceOnLoad();
+        setHWAlgebraOnLoad();
+        setHWSoftwareOnLoad();
+        setHWDebateOnLoad();
+        setHWRoboticsOnLoad();
+    }
+
+    function saveHWHistory() {
+        var key = window.event.keyCode;
+        // If the user has pressed enter
+        if (key == 13) {
+            var historyHW = document.getElementById("inputHWHistory").value;
+            localStorage.historyHWlocal = historyHW;
+        }
+    }
+
+    function setHWHistoryOnLoad() {
+
+        document.getElementById("inputHWHistory").innerHTML = localStorage.historyHWlocal;
+
+    }
+
+    function setHWEnglishOnLoad() {
+        //console.log("calling set onload");
+        document.getElementById("inputHWEnglish").innerHTML = localStorage.englishHWlocal;
+        //console.log("set inner html");
+    }
+
+    function saveHWEnglish() {
+        //console.log("test1");
+        var key = window.event.keyCode;
+        // If the user has pressed enter
+        if (key == 13) {
+            var englishHW = document.getElementById("inputHWEnglish").value;
+            localStorage.englishHWlocal = englishHW;
+        }
+    }
+
+    function setHWSpanishOnLoad() {
+        //console.log("calling set onload");
+        document.getElementById("inputHWSpanish").innerHTML = localStorage.spanishHWlocal;
+        //console.log("set inner html");
+    }
+
+    function saveHWSpanish() {
+        //console.log("test1");
+        var key = window.event.keyCode;
+        // If the user has pressed enter
+        if (key == 13) {
+            var spanishHW = document.getElementById("inputHWSpanish").value;
+            localStorage.spanishHWlocal = spanishHW;
+        }
+    }
+
+    function setHWScienceOnLoad() {
+        //console.log("calling set onload");
+        document.getElementById("inputHWScience").innerHTML = localStorage.scienceHWlocal;
+        //console.log("set inner html");
+    }
+
+    function saveHWScience() {
+        //console.log("test1");
+        var key = window.event.keyCode;
+        // If the user has pressed enter
+        if (key == 13) {
+            var scienceHW = document.getElementById("inputHWScience").value;
+            localStorage.scienceHWlocal = scienceHW;
+        }
+    }
+
+    function setHWAlgebraOnLoad() {
+        //console.log("calling set onload");
+        document.getElementById("inputHWAlgebra").innerHTML = localStorage.algebraHWlocal;
+        //console.log("set inner html");
+    }
+
+    function saveHWAlgebra() {
+        //console.log("test1");
+        var key = window.event.keyCode;
+        // If the user has pressed enter
+        if (key == 13) {
+            var algebraHW = document.getElementById("inputHWAlgebra").value;
+            localStorage.algebraHWlocal = algebraHW;
+        }
+    }
+
+    function setHWSoftwareOnLoad() {
+        //console.log("calling set onload");
+        document.getElementById("inputHWSoftware").innerHTML = localStorage.softwareHWlocal;
+        //console.log("set inner html");
+    }
+
+    function saveHWSoftware() {
+        //console.log("test1");
+        var key = window.event.keyCode;
+        // If the user has pressed enter
+        if (key == 13) {
+            var softwareHW = document.getElementById("inputHWSoftware").value;
+            localStorage.softwareHWlocal = softwareHW;
+        }
+    }
+
+    function setHWDebateOnLoad() {
+        //console.log("calling set onload");
+        document.getElementById("inputHWDebate").innerHTML = localStorage.debateHWlocal;
+        //console.log("set inner html");
+    }
+
+    function saveHWDebate() {
+        //console.log("test1");
+        var key = window.event.keyCode;
+        // If the user has pressed enter
+        if (key == 13) {
+            var debateHW = document.getElementById("inputHWDebate").value;
+            localStorage.softwareHWlocal = debateHW;
+        }
+    }
+
+     function setHWRoboticsOnLoad() {
+        //console.log("calling set onload");
+        document.getElementById("inputHWRobotics").innerHTML = localStorage.roboticsHWlocal;
+        //console.log("set inner html");
+    }
+
+    function saveHWRobotics() {
+        //console.log("test1");
+        var key = window.event.keyCode;
+        // If the user has pressed enter
+        if (key == 13) {
+            var roboticsHW = document.getElementById("inputHWRobotics").value;
+            localStorage.roboticsHWlocal = roboticsHW;
+        }
+    }
+
+    </script>
+</body>
+
+</html>
