@@ -70,20 +70,20 @@
                     <div class="well">
                         <h4>History</h4>
                         <div class="form-group">
-                            <textarea id="inputHWHistory" onkeypress="saveHWHistory();" rows="2" cols="25"></textarea>
+                            <textarea id="inputHWHistory" onkeypress="saveHWHistory();" rows="4" cols="25"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="well">
                         <h4>English</h4>
-                        <textarea id="inputHWEnglish" onkeypress="saveHWEnglish();" rows="2" cols="25" ></textarea>
+                        <textarea id="inputHWEnglish" onkeypress="saveHWEnglish();" rows="4" cols="25" ></textarea>
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="well">
                         <h4>Spanish</h4>
-                        <textarea id="inputHWSpanish" onkeypress="saveHWSpanish();" rows="2" cols="25"></textarea>
+                        <textarea id="inputHWSpanish" onkeypress="saveHWSpanish();" rows="4" cols="25"></textarea>
                     </div>
                 </div>
             </div>
@@ -91,19 +91,19 @@
                     <div class="col-sm-12">
                         <div class="well">
                             <h4>Lab Science</h4>
-                            <textarea id="inputHWScience" onkeypress="saveHWScience();" rows="2" cols="25"></textarea>
+                            <textarea id="inputHWScience" onkeypress="saveHWScience();" rows="4" cols="25"></textarea>
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="well">
                             <h4>Advanced Algebra</h4>
-                            <textarea id="inputHWAlgebra" onkeypress="saveHWAlgebra();" rows="2" cols="25"></textarea>
+                            <textarea id="inputHWAlgebra" onkeypress="saveHWAlgebra();" rows="4" cols="25"></textarea>
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="well">
                             <h4>Software Development</h4>
-                            <textarea id="inputHWSoftware" onkeypress="saveHWSoftware();" rows="2" cols="25"></textarea>
+                            <textarea id="inputHWSoftware" onkeypress="saveHWSoftware();" rows="4" cols="25"></textarea>
                         </div>
                     </div>
                 </div>
@@ -111,13 +111,13 @@
                     <div class="col-sm-12">
                         <div class="well">
                             <h4>Debate</h4>
-                            <textarea id="inputHWDebate" onkeypress="saveHWDebate();" rows="2" cols="25"></textarea>
+                            <textarea id="inputHWDebate" onkeypress="saveHWDebate();" rows="4" cols="25"></textarea>
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="well">
                             <h4>Robotics</h4>
-                             <textarea id="inputHWRobotics" onkeypress="saveHWRobotics();" rows="2" cols="25"></textarea>
+                             <textarea id="inputHWRobotics" onkeypress="saveHWRobotics();" rows="4" cols="25"></textarea>
                         </div>
                     </div>
                 </div>
@@ -148,7 +148,7 @@
     function saveHWHistory() {
         var key = window.event.keyCode;
         // If the user has pressed enter
-        if (key == 13) {
+        if (key==32 ||key==13) {
             var historyHW = document.getElementById("inputHWHistory").value;
             localStorage.historyHWlocal = historyHW;
         }
@@ -170,7 +170,7 @@
         //console.log("test1");
         var key = window.event.keyCode;
         // If the user has pressed enter
-        if (key == 13) {
+        if (key==32 ||key==13) {
             var englishHW = document.getElementById("inputHWEnglish").value;
             localStorage.englishHWlocal = englishHW;
         }
@@ -186,7 +186,7 @@
         //console.log("test1");
         var key = window.event.keyCode;
         // If the user has pressed enter
-        if (key == 13) {
+        if (key==32 ||key==13) {
             var spanishHW = document.getElementById("inputHWSpanish").value;
             localStorage.spanishHWlocal = spanishHW;
         }
@@ -202,7 +202,7 @@
         //console.log("test1");
         var key = window.event.keyCode;
         // If the user has pressed enter
-        if (key == 13) {
+        if (key==32 ||key==13) {
             var scienceHW = document.getElementById("inputHWScience").value;
             localStorage.scienceHWlocal = scienceHW;
         }
@@ -218,7 +218,7 @@
         //console.log("test1");
         var key = window.event.keyCode;
         // If the user has pressed enter
-        if (key == 13) {
+        if (key==32 ||key==13) {
             var algebraHW = document.getElementById("inputHWAlgebra").value;
             localStorage.algebraHWlocal = algebraHW;
         }
@@ -234,7 +234,8 @@
         //console.log("test1");
         var key = window.event.keyCode;
         // If the user has pressed enter
-        if (key == 13) {
+        if (key==32 ||key==13) {
+            //console.log("space test");
             var softwareHW = document.getElementById("inputHWSoftware").value;
             localStorage.softwareHWlocal = softwareHW;
         }
@@ -242,17 +243,20 @@
 
     function setHWDebateOnLoad() {
         //console.log("calling set onload");
+        //console.log("debate set test");
         document.getElementById("inputHWDebate").innerHTML = localStorage.debateHWlocal;
         //console.log("set inner html");
     }
 
     function saveHWDebate() {
         //console.log("test1");
+
         var key = window.event.keyCode;
         // If the user has pressed enter
-        if (key == 13) {
+        if (key==32 ||key==13) {
+            //console.log("debate enterkey test");
             var debateHW = document.getElementById("inputHWDebate").value;
-            localStorage.softwareHWlocal = debateHW;
+            localStorage.debateHWlocal = debateHW;
         }
     }
 
@@ -266,7 +270,8 @@
         //console.log("test1");
         var key = window.event.keyCode;
         // If the user has pressed enter
-        if (key == 13) {
+        if (key==32 ||key==13) {
+            
             var roboticsHW = document.getElementById("inputHWRobotics").value;
             localStorage.roboticsHWlocal = roboticsHW;
         }
